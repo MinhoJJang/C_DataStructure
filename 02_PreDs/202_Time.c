@@ -20,60 +20,18 @@ int main() {
 		start = time(NULL); // 시작시간, 현재시간 측정
 
 		// 측정하고자 하는 수행코드 
-		/*for (int i = 0; i < 5; i++) {
+		
+		for (int i = 0; i < 5; i++) {
 			printf("%d ", i);
 			_sleep(1000);
 		}
 		printf("\n");
-		*/
-
-		/*{
-
-			int x, y, z;
-			int Test, t;
-
-			scanf("%d", &Test);
-
-			int ans[100] = { 0 };
-
-			for (t = 0; t < Test; t++) {
-
-				scanf("%d%d", &x, &y);
-
-				z = y - x;
-				int n;
-
-				for (n = 0; ; n++)
-				{
-					if (z - n * n <= 0) {
-						break;
-					}
-				}
-
-				if (z > n*n - n) {
-					ans[t] = 2 * n - 1;
-				}
-				else {
-					ans[t] = 2 * n - 2;
-				}
-
-				x = 0;
-				y = 0;
-			}
-
-			for (t = 0; t < Test; t++) {
-				printf("%d\n", ans[t]);
-			}
-
-		}*/
 
 		end = time(NULL); // 종료시간 
 
 		double result = (double)(end - start); //경과시간
 		printf("%f s\n", result);
 	}
-
-
 
 	//시간측정 : clock() 사용
 	{
