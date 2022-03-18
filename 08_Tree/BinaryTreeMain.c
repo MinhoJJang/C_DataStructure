@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h> // malloc, rand, atoi ..동적메모리, 난수, 문자열 변환
 #include <string.h> //strcpy.. 문자열함수. memcpy.. 메모리블럭 함수
-#include <conio.h> // _getch, putch ... MS기반 C 비표준 함수
-#include <time.h> // clock .. 시간, 날짜 함수
-#pragma warning(disable:4996) // scnaf() 등 전통 c함수중 버퍼문제. 
-#pragma warning(disable:4477) // unsigned <--> signed 관련 warning 무시 
+
 #include "BinaryTree.h"
 
 void printData(BTData data)
@@ -12,7 +9,8 @@ void printData(BTData data)
 	printf("%d ", data);
 }
 
-int main() {
+int main()
+{
 
 	{
 		BTreeNode *bt1 = btree_make_node();
@@ -29,7 +27,6 @@ int main() {
 		btree_make_right(bt1, bt3);
 		btree_make_left(bt2, bt4);
 
-
 		//            (1)
 		//         ↙	   ↘
 		//      (2)       (3)
@@ -37,12 +34,12 @@ int main() {
 		// (4)
 
 		// b1의 left 의 data?
-		printf("%d \n", btree_get_data(btree_get_left(bt1))); //2
+		printf("%d \n", btree_get_data(btree_get_left(bt1))); // 2
 
-		//bt1의 left의 left 데이터는?
-		printf("%d \n", btree_get_data(btree_get_left(btree_get_left(bt1)))); //4
+		// bt1의 left의 left 데이터는?
+		printf("%d \n", btree_get_data(btree_get_left(btree_get_left(bt1)))); // 4
 
-		//Traversing
+		// Traversing
 		printf("Preorder : ");
 		btree_preorder_traverse(bt1, printData); // 1243
 		printf("\n");
@@ -60,7 +57,7 @@ int main() {
 		printf("\n");
 
 		btree_delete(bt1); // Clear 4-2-3-1
-	}		
+	}
 
 	printf("--------------------------\n");
 	{
@@ -92,23 +89,23 @@ int main() {
 		btree_make_right(bt8, bt7);
 		btree_make_left(bt2, bt9);
 
-		//Traversing
-		printf("Preorder : "); // C-L-R
+		// Traversing
+		printf("Preorder : ");					 // C-L-R
 		btree_preorder_traverse(bt5, printData); //  5-4-3-0-8-7-1-2-9
 		printf("\n");
 
-		printf("Inorder : "); // L-C-R
+		printf("Inorder : ");					// L-C-R
 		btree_inorder_traverse(bt5, printData); // 3-4-8-7-0-1-5-9-2
 		printf("\n");
 
-		printf("Postorder : "); // L-R-C
+		printf("Postorder : ");					  // L-R-C
 		btree_postorder_traverse(bt5, printData); // 3-7-8-1-0-4-9-2-5
 		printf("\n");
 
 		printf("level - order : "); // L-R-C
-		btree_levelorder_traverse(bt5, printData); 
+		btree_levelorder_traverse(bt5, printData);
 		// 5 4 2 3 0 9 8 1 7
-		
+
 		printf("\n");
 
 		btree_delete(bt5); // Clear 3-7-8-1-0-4-9-2-5
