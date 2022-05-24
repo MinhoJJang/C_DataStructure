@@ -1,63 +1,62 @@
 #include <stdio.h>
 #include <stdlib.h> // malloc, rand, atoi ..동적메모리, 난수, 문자열 변환
 #include <string.h> //strcpy.. 문자열함수. memcpy.. 메모리블럭 함수
-#include <conio.h> // _getch, putch ... MS기반 C 비표준 함수
-#include <time.h> // clock .. 시간, 날짜 함수
-#pragma warning(disable:4996) // scnaf() 등 전통 c함수중 버퍼문제. 
-#pragma warning(disable:4477) // unsigned <--> signed 관련 warning 무시 
+#include <time.h>	// clock .. 시간, 날짜 함수
+//#pragma warning(disable : 4996) // scnaf() 등 전통 c함수중 버퍼문제.
+//#pragma warning(disable : 4477) // unsigned <--> signed 관련 warning 무시
 
 #define DATA_SIZE 100
 #include "Sort.h"
 #include "HeapSort.h"
 #include "QuickSort.h"
 
-int main() {
+int main()
+{
 	int length;
 
-	//printf("BubbleSort 동작\n");
+	// printf("BubbleSort 동작\n");
 	//{
 	//	int data[] = { 3, 2, 7, 5, 1 };
 	//	length = sizeof(data) / sizeof(int);
 	//	BubbleSort(data, length); // {1,2,3,5,7}
 	//	printArr(data, length);
-	//}
+	// }
 	//{
 	//	int data[] = { 11,3,28,43,9,4 };
 	//	length = sizeof(data) / sizeof(int);
-	//	BubbleSort(data, length); // 
+	//	BubbleSort(data, length); //
 	//	printArr(data, length);
-	//}
+	// }
 
-	//printf("\n");
-	//printf("SelectionSort 동작\n");
+	// printf("\n");
+	// printf("SelectionSort 동작\n");
 	//{
 	//	int data[] = { 1,5,10,2,9 };
 	//	int length = sizeof(data) / sizeof(int);
 	//	SelectionSort(data, length);
 	//	printArr(data, length);
-	//}
+	// }
 	//{
 	//	int data[] = { 11,3,28,43,9,4 };
 	//	length = sizeof(data) / sizeof(int);
-	//	SelectionSort(data, length); // 
+	//	SelectionSort(data, length); //
 	//	printArr(data, length);
-	//}
+	// }
 
-
-	//printf("\n");
-	//printf("InsertionSort 동작\n");
+	// printf("\n");
+	// printf("InsertionSort 동작\n");
 	//{
 	//	int data[] = { 1,5,10,2,9 };
 	//	int length = sizeof(data) / sizeof(int);
 	//	SelectionSort(data, length);
 	//	printArr(data, length);
-	//}
+	// }
 	//{
 	//	int data[] = { 11,3,28,43,9,4 };
 	//	length = sizeof(data) / sizeof(int);
-	//	InsertionSort(data, length); // 
+	//	InsertionSort(data, length); //
 	//	printArr(data, length);
-	//}
+	// }
 
 	//// 랜덤셔플!!
 	//{
@@ -68,8 +67,8 @@ int main() {
 	//		printArr(data, 9 );
 	//	}
 	//}
-	
-	{ // 도우미 함수 동작 확인 
+
+	{	// 도우미 함수 동작 확인
 		/*int srcArr[DATA_SIZE];
 		genRandom(srcArr, DATA_SIZE);
 		printArr(srcArr, DATA_SIZE);
@@ -80,12 +79,11 @@ int main() {
 		// 제대로 동작하는지 확인
 	}
 
-
 	// ----------------------------------------
 	/*printf("\nTime Complexity\n");
 	{
 		int srcArr[DATA_SIZE];
-		genRandom(srcArr, DATA_SIZE); // 랜덤 생성 
+		genRandom(srcArr, DATA_SIZE); // 랜덤 생성
 		int workArr[DATA_SIZE];
 
 		memcpy(workArr, srcArr, sizeof(int)*DATA_SIZE);
@@ -114,7 +112,7 @@ int main() {
 
 	memcpy(workArr, srcArr, sizeof(int) * DATA_SIZE);
 	chkTimeLap(InsertionSort, workArr, DATA_SIZE, "삽입역정렬");
-	
+
 	버블랜덤 (size: 20000) 수행결과: 834 ms
 	선택랜덤 (size: 20000) 수행결과: 378 ms
 	삽입랜덤 (size: 20000) 수행결과: 174 ms
@@ -135,8 +133,8 @@ int main() {
 		genRandom(srcArr, DATA_SIZE);
 
 		int workArr[DATA_SIZE];
-		memcpy(workArr, srcArr, sizeof(int)*DATA_SIZE);
-		 //workArr에 srcArr의 데이터를 집어넣고 그만큼의 메모리를 할당
+		memcpy(workArr, srcArr, sizeof(int) * DATA_SIZE);
+		// workArr에 srcArr의 데이터를 집어넣고 그만큼의 메모리를 할당
 
 		Heap hp;
 		heap_init(&hp, DATA_SIZE);
@@ -163,13 +161,13 @@ int main() {
 		printArr(arr, len);
 	}*/
 
-	//printf("\nQuickSort\n");
+	// printf("\nQuickSort\n");
 	//{
 	//	int srcArr[DATA_SIZE];
 	//	int srcArr1[DATA_SIZE];
 	//	genRandom(srcArr, DATA_SIZE);
 	//	genIncSorted(srcArr1, DATA_SIZE);  // 2. 오름차순 이미 정렬될 배열
-	//    //genDecSorted(srcArr, DATA_SIZE);  // 3. 내림차순, 역정렬된 배열
+	//     //genDecSorted(srcArr, DATA_SIZE);  // 3. 내림차순, 역정렬된 배열
 
 	//	int workArr[DATA_SIZE];
 	//	int workArr1[DATA_SIZE];
@@ -177,16 +175,14 @@ int main() {
 
 	//	chkTimeLap(QuickSortMain, workArr, DATA_SIZE, "퀵정렬 랜덤");
 
-	//	//QuickSort의 worst case 
+	//	//QuickSort의 worst case
 	//	memcpy(workArr1, srcArr1, sizeof(int)*DATA_SIZE);
 
 	//	//데이터 3000정도에서 테스트
-	//	chkTimeLap(QuickSortMain, workArr1, DATA_SIZE, "퀵정렬 오름차순"); 
+	//	chkTimeLap(QuickSortMain, workArr1, DATA_SIZE, "퀵정렬 오름차순");
 	//	// 프로그램이 죽음. 스택 메모리를다 채워버리기때문에..
 	//}
 
-
 	printf("\n아무키나 입력하면 프로그램이 종료됩니다\n");
-	_getch();
 	return 0;
 }

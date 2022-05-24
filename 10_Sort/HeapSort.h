@@ -1,46 +1,46 @@
 #ifndef __HEAP_H__
 #define __HEAP_H__
 
-//#define HEAP_LEN 
+//#define HEAP_LEN
 
 #define SUCCESS 1
 #define FAIL 0
-/* HeapÀÇ µ¥ÀÌÅÍ*/
+/* Heapì˜ ë°ì´í„°*/
 
 typedef int HData;
 
 typedef int fnPriorityComp(HData d1, HData d2);
-// µÎ µ¥ÀÌÅÍ¸¦ ºñ±³ÇØ ¾î¶² °ÍÀÌ Å©°Å³ª °°ÀºÁö ¾Ë¾Æ³»´Â ÇÔ¼ö-ÀÇ Å¸ÀÔÀ» Á¤ÀÇÇÑ°ÍÀÓ.. 
-// d1ÀÇ ¿ì¼±¼øÀ§°¡ ³ô´Ù¸é 0º¸´Ù Å« °ª ¸®ÅÏ 
-// d2ÀÇ ¿ì¼±¼øÀ§°¡ ³ô´Ù¸é 0º¸´Ù ÀÛÀº °ª ¸®ÅÏ 
-// d1 = d2¸é 0¸®ÅÏ
+// ë‘ ë°ì´í„°ë¥¼ ë¹„êµí•´ ì–´ë–¤ ê²ƒì´ í¬ê±°ë‚˜ ê°™ì€ì§€ ì•Œì•„ë‚´ëŠ” í•¨ìˆ˜-ì˜ íƒ€ì…ì„ ì •ì˜í•œê²ƒì„..
+// d1ì˜ ìš°ì„ ìˆœìœ„ê°€ ë†’ë‹¤ë©´ 0ë³´ë‹¤ í° ê°’ ë¦¬í„´
+// d2ì˜ ìš°ì„ ìˆœìœ„ê°€ ë†’ë‹¤ë©´ 0ë³´ë‹¤ ì‘ì€ ê°’ ë¦¬í„´
+// d1 = d2ë©´ 0ë¦¬í„´
 
 typedef struct _heap
 {
-	int numData; // ´ã°íÀÖ´Â µ¥ÀÌÅÍ°³¼ö 
-	HData *heapArr; // µ¿Àû¸Ş¸ğ¸®·Î ±¸Çö
-	fnPriorityComp *comp; // ¿ì¼±¼øÀ§ ºñ±³ÇÔ¼ö 
-	// ÇÔ¼öÅ¸ÀÔ Æ÷ÀÎÅÍ comp
+	int numData;		  // ë‹´ê³ ìˆëŠ” ë°ì´í„°ê°œìˆ˜
+	HData *heapArr;		  // ë™ì ë©”ëª¨ë¦¬ë¡œ êµ¬í˜„
+	fnPriorityComp *comp; // ìš°ì„ ìˆœìœ„ ë¹„êµí•¨ìˆ˜
+						  // í•¨ìˆ˜íƒ€ì… í¬ì¸í„° comp
 } Heap;
 
-/* HeapÀÇ µ¿ÀÛ*/
+/* Heapì˜ ë™ì‘*/
 
-// Èü ÃÊ±âÈ­
-//void heap_init(Heap *ph, fnPriorityComp pc);
-void heap_init(Heap *ph, int len); // ÈüÃÊ±âÈ­
+// í™ ì´ˆê¸°í™”
+// void heap_init(Heap *ph, fnPriorityComp pc);
+void heap_init(Heap *ph, int len); // í™ì´ˆê¸°í™”
 void heap_destroy(Heap *ph);
 
-// ÈüÀÌ ºñ¾îÀÖ´ÂÁö? 
+// í™ì´ ë¹„ì–´ìˆëŠ”ì§€?
 int heap_is_empty(Heap *ph);
 
-// Èü¿¡ µ¥ÀÌÅÍ Ãß°¡ insert
+// í™ì— ë°ì´í„° ì¶”ê°€ insert
 void heap_insert(Heap *ph, HData data);
 
-// Èü¿¡ µ¥ÀÌÅÍ »©±â delete
+// í™ì— ë°ì´í„° ë¹¼ê¸° delete
 HData heap_delete(Heap *ph);
 
-// ÈüÁ¤·Ä
+// í™ì •ë ¬
 Heap *g_hp;
 void HeapSort(int arr[], int n);
 
-#endif 
+#endif

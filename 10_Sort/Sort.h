@@ -1,31 +1,27 @@
 #ifndef __SORT_H__
 #define __SORT_H__
 
-void printArr(int arr[], int n); // Á¤·ÄµÈ°Í º¸¿©ÁÖ´Â ÇÔ¼ö
+void printArr(int arr[], int n); // ì •ë ¬ëœê²ƒ ë³´ì—¬ì£¼ëŠ” í•¨ìˆ˜
 
-// ¹«ÀÛÀ§ ¹è¿­ 1~n ¹üÀ§ 
+// ë¬´ì‘ìœ„ ë°°ì—´ 1~n ë²”ìœ„
 void genRandom(int arr[], int n);
 
-// ¿À¸§Â÷¼ø ¹è¿­
+// ì˜¤ë¦„ì°¨ìˆœ ë°°ì—´
 void genIncSorted(int arr[], int n);
 
-// ³»¸²Â÷¼ø ¹è¿­
+// ë‚´ë¦¼ì°¨ìˆœ ë°°ì—´
 void genDecSorted(int arr[], int n);
 
-// ¹è¿­¼¯±â
+// ë°°ì—´ì„ê¸°
 void shuffleArr(int arr[], int n);
 
-// Á¤·ÄÇÔ¼ö ¼º´É ÃøÁ¤
+// ì •ë ¬í•¨ìˆ˜ ì„±ëŠ¥ ì¸¡ì •
 typedef void fnSort(int arr[], int n);
+
 void chkTimeLap(fnSort sort, int arr[], int n, char *szTitle);
 
-
-
-
-void BubbleSort(int arr[], int n); // ¹öºí Á¤·Ä
+void BubbleSort(int arr[], int n); // ë²„ë¸” ì •ë ¬
 void SelectionSort(int arr[], int n);
 void InsertionSort(int arr[], int n);
-
-
 
 #endif
